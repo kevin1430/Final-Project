@@ -6,13 +6,20 @@ import java.util.Scanner;
 import java.io.FileNotFoundException; 
 
 public class Employee extends Person {
- /*ArrayList<String> ordersList = new ArrayList<String>();
-    public void addOrders(String orders) {
-      ordersList.add(orders);
+ 
+ String[] employees = {"Michael Scott", "Dwight Schrute", "Jim Halpert", "Pam Halpert", "Erin Hannon", "Andy Bernard", "Angela Martin","Kevin Malone","Creed Bratton","Toby Flenderson","Oscar Martinez"};
+ public void employeesList() {
+    for (String e : employees) {
+          System.out.println("Employee: " + e);
+        }
     }
-    public ArrayList getOrdersList() {
-      return this.ordersList; 
-        */
+ String[] orderNum =  {"0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009", "0010", "0011", "0012"};
+  public void ordersList() {
+    for (String i : orderNum) {
+          System.out.println("Order: " + i);
+      }
+    }
+    
   Scanner scan = new Scanner(System.in);
   public void printIt() {
     System.out.println("Creating a file...");
@@ -28,19 +35,6 @@ public class Employee extends Person {
         e.printStackTrace();
     }
   }
-  public void writeThat() {
-    System.out.println("Enter information");
-    String writer = scan.nextLine();
-      try {
-        FileWriter typer = new FileWriter("datafile.txt");
-        typer.write(writer);
-        typer.close();
-        System.out.println("Successfully wrote to the file.");
-      } catch (IOException e) {
-        System.out.println("An error occurred.");
-        e.printStackTrace();
-      }
-    }
   public void readIt() {
     System.out.println("Reading file...");
     try {
@@ -62,5 +56,32 @@ public class Employee extends Person {
   }
   public String getTitle() {
     return jobTitle;
+  }
+
+  public void updateData() {
+    System.out.println("Please update your employee information.");
+    System.out.println("Enter your name.");
+    String writer = scan.nextLine();
+    System.out.println("Enter your job title.");
+    String writer1 = scan.nextLine();
+    System.out.println("Enter your address.");
+    String writer2 = scan.nextLine();
+    System.out.println("Enter your email.");
+    String writer3 = scan.nextLine();
+    System.out.println("Enter your phone number.");
+    long writer4 = scan.nextLong();
+    try {
+        FileWriter typer = new FileWriter("datafile.txt");
+        typer.write("Employee: " + writer + " |");
+        typer.write("Job Title: " + writer1 + " |");
+        typer.write("Address: " + writer2 + " |");
+        typer.write("Email: " + writer3 + " |");
+        typer.write("Phone Number: " + writer4 + " |");
+        typer.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
   }
 }
