@@ -1,1 +1,1 @@
-#Final Project
+Final Project - CRM for Dunder Mifflin, a fictional paper company from The Office.
